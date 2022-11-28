@@ -9,22 +9,12 @@
     "sequelize-cli": "^6.4.1",
     "sqlite3": "^5.0.8"
   },
-  "name": "test-api",
+  "name": "PruebaTecnicaHolafly",
   "version": "1.0.0",
-  "description": "API de pruebas",
+  "description": "Prueba Técnica de Holafly",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "start": "node index.js",
     "dev": "nodemon --watch ./src index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/holafly/test-api.git"
-  },
-  "author": "Alvaro J. Aragoneses",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/holafly/test-api/issues"
-  },
-  "homepage": "https://github.com/holafly/test-api#readme"
+  }
 }
