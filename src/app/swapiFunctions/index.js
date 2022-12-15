@@ -1,24 +1,21 @@
+
 const fetch = require('node-fetch');
 
 const getWeightOnPlanet = (mass, gravity) => {
     return mass * gravity;
 }
 
-const getLogs = async (req, res) => {
-    const {name, mass, height, homeworld} = await app.swapiFunctions.genericRequest(`https://swapi.dev/api/people/${req.params.id}`, 'GET', null, true);
-    const {name: homeworld_name, url: homeworld_id} = await app.swapiFunctions.genericRequest(homeworld, 'GET', null, true);
+const getLogs = async (action, header, ip) => {
+    /* 
+        funcion que me permita guardar las consultas a la API
+    */
 
-    const dataGetPeople = {
-        name,
-        mass,
-        height,
-        homeworld_name,
-        homeworld_id
-    }
+        const {} = await genericRequest('http://localhost:3000/logs', 'POST', {
+            action,
+            header,
+            ip
+        }, true);
 
-    res.send(dataGetPeople);
-
-    return dataGetPeople;
 }
 
 const genericRequest = async (url, method, body, logging = false) => {
@@ -33,10 +30,12 @@ const genericRequest = async (url, method, body, logging = false) => {
     if(logging){
         console.log(data);
     }
+    
     return data;
 }
 
 module.exports = {
     getWeightOnPlanet,
-    genericRequest
+    genericRequest,
+    getLogs
 }
