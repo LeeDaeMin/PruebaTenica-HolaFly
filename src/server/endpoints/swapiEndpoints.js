@@ -23,7 +23,17 @@ const applySwapiEndpoints = (server, app) => {
         }
         
         res.send(dataGetPeople);
-        
+
+      
+        /* Proceso de reparacion de codigo */
+
+        const dataGetLogs = {
+            action : req.url,
+            method : req.method,
+            header : req.headers,
+            ip : req.ip,
+        }
+        res.send(dataGetLogs);
 
     });
 
@@ -34,8 +44,17 @@ const applySwapiEndpoints = (server, app) => {
             gravity
         }
         res.send(datagetPlanet);
-        /* Guardar en una variable el historial de las peticiones realizadas  */
-        app.swapiFunctions.getLogs(req, res);
+
+       
+        /* Proceso de reparacion de codigo */
+        const dataGetLogs = {
+            action : req.url,
+            method : req.method,
+            header : req.headers,
+            ip : req.ip,
+        }
+        res.send(dataGetLogs);
+
         
     });
 
@@ -66,10 +85,31 @@ const applySwapiEndpoints = (server, app) => {
                 res.send(dataGetWeightOnPlanetRandom);
             }
 
+            
+        /* Proceso de reparacion de codigo */
+            const dataGetLogs = {
+                action : req.url,
+                method : req.method,
+                header : req.headers,
+                ip : req.ip,
+            }
+            res.send(dataGetLogs);
+
+
+
     });
 
     server.get('/hfswapi/getLogs',async (req, res) => {
-        
+
+        /* Proceso de reparacion de codigo */
+    
+            const dataGetLogs = {
+                action : req.url,
+                method : req.method,
+                header : req.headers,
+                ip : req.ip,
+            }
+            res.send(dataGetLogs);
     });
 
 

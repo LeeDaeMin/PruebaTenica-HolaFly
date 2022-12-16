@@ -5,18 +5,22 @@ const getWeightOnPlanet = (mass, gravity) => {
     return mass * gravity;
 }
 
-const getLogs = async (action, header, ip) => {
-    /* 
-        funcion que me permita guardar las consultas a la API
-    */
+const getLogs = (req, res) => { 
 
-        const {} = await genericRequest('http://localhost:3000/logs', 'POST', {
-            action,
-            header,
-            ip
-        }, true);
+    
+        /* Proceso de escritura de funcion */
+
+    const dataGetLogs = {
+        action : req.url,
+        method : req.method,
+        header : req.headers,
+        ip : req.ip,
+    }
+    res.send(dataGetLogs);
+
 
 }
+
 
 const genericRequest = async (url, method, body, logging = false) => {
     let options = {
