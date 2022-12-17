@@ -6,8 +6,6 @@ const getWeightOnPlanet = (mass, gravity) => {
 }
 
 const getLogs = (req, res) => { 
-
-    
         /* Proceso de escritura de funcion */
 
     const dataGetLogs = {
@@ -17,7 +15,6 @@ const getLogs = (req, res) => {
         ip : req.ip,
     }
     res.send(dataGetLogs);
-
 
 }
 
